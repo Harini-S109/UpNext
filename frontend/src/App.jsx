@@ -11,6 +11,7 @@ import Notes from './pages/Notes/Notes';
 const routes = (
   <Router>
     <Routes>
+    <Route path="/" exact element={<login />} />
       <Route path="/tasks" exact element={<Tasks />} />
       <Route path="/home" exact element={<Home />} />
       <Route path="/login" exact element={<Login />} />
