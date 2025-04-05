@@ -7,6 +7,7 @@ const mongoose = require("mongoose");
 const multer = require('multer');
 const path = require('path');
 const fs = require('fs');
+const port = process.env.port || 8000;
 
 mongoose.connect(config.connectionString);
 
@@ -1003,6 +1004,6 @@ app.post("/create-chat-session", authenticateToken, async (req, res) => {
     }
 });
 
-app.listen(8000);
+app.listen(port);
 
 module.exports = app;
