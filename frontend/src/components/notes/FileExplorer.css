@@ -1,0 +1,167 @@
+.file-explorer {
+    padding: 20px;
+    background: #f8f9fa;
+    min-height: 100vh;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.actions {
+    display: flex;
+    gap: 10px;
+}
+
+
+.breadcrumb {
+    margin-bottom: 20px;
+}
+
+.breadcrumb button {
+    background: none;
+    border: none;
+    color: #7161EF;
+    cursor: pointer;
+}
+
+.content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 12rem;
+}
+
+.item:hover {
+    background: #f1f3f4;
+}
+
+.icon {
+    color: #5f6368;
+    font-size: 20px;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: #fff;
+    padding: 24px;
+    border-radius: 8px;
+    min-width: 400px;
+    width: 50vw;
+}
+
+.modal-content h3 {
+    margin-bottom: 16px;
+}
+
+.modal-content input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.modal-actions button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.modal-actions button:first-child {
+    background: #fff;
+    border: 1px solid #ddd;
+}
+
+.modal-actions button:last-child {
+    background: #7161EF;
+    color: #fff;
+}
+
+.error-message {
+    color: #d93025;
+    margin-top: 16px;
+    text-align: center;
+}
+
+  
+.item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    margin-bottom: 8px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    background: #fff;
+    list-style: 1rem;
+}
+
+.item-content {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.item-content:hover {
+    background-color: #f5f5f5;
+}
+
+
+
+.delete-button {
+    background: none;
+    border: none;
+    color: #FF7575;
+    cursor: pointer;
+    padding: 8px;
+    margin-right: 5px;
+    border-radius: 50%;
+    transition: background-color 0.2s;
+}
+
+.delete-button:hover {
+    background-color: #f0f0f0;
+}
+
+.delete-button-confirm {
+    background-color: #FF7575;
+    color: white;
+    border: none;
+    padding: 8px
+}
