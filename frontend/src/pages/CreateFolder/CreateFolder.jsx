@@ -21,7 +21,7 @@ const CreateFolder = ({ setCreateFolderModalOpen }) => {
 
         try {
             setLoading(true);
-            const response = await axios.post('http://localhost:8000/create-folder', 
+            const response = await axios.post('https://upnext-a70q.onrender.com/create-folder', 
                 {
                     name: folderName,
                     parentFolder: null // for root level folders

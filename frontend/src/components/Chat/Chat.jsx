@@ -16,7 +16,7 @@ const Chat = () => {
     
     // Configure axios with auth headers
     const api = axios.create({
-      baseURL: 'http://localhost:8000',
+      baseURL: 'https://upnext-a70q.onrender.com',
       headers: {
         'Authorization': `Bearer ${token}`,
         'Content-Type': 'application/json'

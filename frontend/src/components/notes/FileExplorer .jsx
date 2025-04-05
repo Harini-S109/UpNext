@@ -18,7 +18,7 @@ const FileExplorer = () => {
 
     const openFile = (filePath) => {
         const formattedPath = filePath.replace(/\\/g, '/');
-        window.open(`http://localhost:8000/${formattedPath}`, '_blank', 'noopener,noreferrer');
+        window.open(`https://upnext-a70q.onrender.com/${formattedPath}`, '_blank', 'noopener,noreferrer');
     };
 
     // Fetch folders and files
