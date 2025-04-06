@@ -101,8 +101,8 @@ const Home = () => {
                     <p className='text-secondary'>{moment(currentDate).format('dddd, Do MMMM YYYY')}</p>
                 </div>
 
-                <div className='d-flex flex-column w-100 gap-2'>
-                    <div className='d-flex flex-row w-100 gap-4 px-4'>
+                <div className="d-flex flex-column flex-md-row flex-wrap gap-2">
+                    <div className='d-flex flex-row  flex-wrap w-100 gap-4 px-4 '>
                         <div className=' p-3 py-4 d-flex flex-column align-items-center rounded gap-2' style={{ width: '18rem', backgroundColor:"#7161EF" }}>
                             <h3 className='text-light'>Total tasks</h3>  
                             <h1 className='text-light'>{taskStats.total}</h1>

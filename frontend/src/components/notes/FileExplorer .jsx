@@ -170,7 +170,7 @@ const FileExplorer = () => {
     return (
         <div className="file-explorer">
             {/* Header */}
-            <div className="header">
+            <div className="header d-flex flex-row  flex-wrap">
                 <h2 className='fw-bold'>My Notes</h2>
                 <div className="actions">
                     <button className='btn-custom' onClick={() => setShowCreateModal(true)} style={{ width: '8rem', backgroundColor:"#7161EF" }}>

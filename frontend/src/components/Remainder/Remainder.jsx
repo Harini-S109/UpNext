@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { MdOutlinePushPin, MdCreate, MdDelete, MdCheckCircleOutline, MdAdd } from "react-icons/md";
 import { BsAlarmFill } from "react-icons/bs";
 import { AiOutlineCheck } from "react-icons/ai";
@@ -22,6 +22,19 @@ const Remainder = ({ userId }) => {
         type: ""
     });
 
+const audioRef = useRef(new Audio("/alarm.mp3")); // Add alarm.mp3 to public folder
+
+  // 🕒 Check if reminder time matches current time
+  const checkReminderTimes = () => {
+    const now = moment().format("HH:mm");
+
+    reminders.forEach((reminder) => {
+      if (reminder.time === now && !reminder.completed) {
+        audioRef.current.play();
+        showToastMsg(`Reminder: ${reminder.title}`, "reminder");
+      }
+    });
+  };
 
 
     // Fetch all reminders

@@ -210,7 +210,7 @@ const handleStatusChange = (taskId, newStatus) => {
 
         {/* Tasks Display Section */}
 
-        <div className=' p-3 px-3 d-flex flex-row gap-3'>
+        <div className=' p-3 px-3 d-flex flex-row  flex-wrap gap-3'>
           <div className='d-flex flex-column gap-3 p-3 rounded mw-75 ' style={{ background: '' }}>
             <div className='p-2 px-3 rounded-1 fw-bold fs-6 '  style={{ width: '18rem', backgroundColor:"#", color:"#7161EF", border: "1px solid #C2C0FF" }}>
               TO DO
