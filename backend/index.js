@@ -1004,6 +1004,22 @@ app.post("/create-chat-session", authenticateToken, async (req, res) => {
     }
 });
 
+app.get("/chat-sessions", authenticateToken, async (req, res) => {
+    try {
+      const userId = req.user._id;
+  
+      const sessions = await ChatSession.find({ userId: userId })
+              .sort({ createdAt: -1 })
+        .select("_id createdAt messages") // Only return necessary fields
+        .lean();
+  
+      res.status(200).json(sessions);
+    } catch (error) {
+      console.error("Error fetching chat sessions:", error);
+      res.status(500).json({ error: "Failed to fetch chat sessions" });
+    }
+  });
+
 app.listen(port);
 
 module.exports = app;

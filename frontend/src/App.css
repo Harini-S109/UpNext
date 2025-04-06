@@ -869,13 +869,14 @@
 }
 
 .new-chat-button {
-  background: none;
-  border: 1px solid #4e4eff;
-  color: #4e4eff;
-  padding: 6px 12px;
-  border-radius: 8px;
+  margin-right: 8px;
+  background-color: #e0e0ff;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 6px;
   cursor: pointer;
-  font-size: 14px;
+  color: #000;
+  font-size: 16px;
 }
 
 .ai-messages {
@@ -951,3 +952,217 @@
   0%, 80%, 100% { opacity: 0; }
   40% { opacity: 1; }
 }
+
+
+.chat-history {
+  background-color: #f9f9f9;
+  padding: 10px 15px;
+  border-bottom: 1px solid #ccc;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.chat-history ul {
+  list-style: none;
+  padding: 0;
+}
+
+.chat-history li button {
+  background: none;
+  border: none;
+  color: #333;
+  cursor: pointer;
+  padding: 6px 0;
+  width: 100%;
+  text-align: left;
+}
+
+.history-button {
+  margin-right: 8px;
+  background-color: #e0e0ff;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+
+
+.file-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f9fafb;
+  padding: 14px 20px;
+  margin-bottom: 14px;
+  border-radius: 12px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+  transition: background 0.2s ease;
+  width: 100%; /* full width inside the container */
+  max-width: 700px; /* limits stretch on large screens */
+}
+
+.file-info {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex: 1;
+  cursor: pointer;
+}
+
+.file-icon {
+  font-size: 22px;
+  color: #4f46e5;
+}
+
+.file-name {
+  font-weight: 500;
+  color: #111827;
+  word-break: break-word;
+  font-size: 16px;
+}
+
+.file-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.action-button {
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  padding: 6px 10px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  font-size: 16px;
+}
+
+.action-button:hover {
+  background-color: #e5e7eb;
+}
+
+.action-button.delete {
+  color: #ef4444;
+  border-color: #ef4444;
+}
+
+.action-button.delete:hover {
+  background-color: #fee2e2;
+}
+
+/* Base styles for the search container */
+.search-container {
+  display: flex;
+  align-items: center;
+  background-color: #f5f5f5;
+  border-radius: 20px;
+  padding: 0 10px;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  height: 40px;
+}
+
+/* Desktop styles - expanded by default */
+.search-container.desktop {
+  width: 250px;
+}
+
+/* Mobile styles - collapsed by default */
+/* Base styles for the search container */
+.search-container {
+  display: flex;
+  align-items: center;
+  background-color: #f5f5f5;
+  border-radius: 20px;
+  padding: 0 10px;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  height: 40px;
+}
+
+/* Desktop styles - expanded by default */
+.search-container.desktop {
+  width: 250px;
+}
+
+/* Mobile styles - collapsed by default */
+.search-container.mobile {
+  width: 40px;
+}
+
+.search-container.mobile.expanded {
+  width: 150px;
+}
+
+.search-input {
+  border: none;
+  background: transparent;
+  outline: none;
+  padding: 8px;
+  flex: 1;
+  font-size: 14px;
+}
+
+.search-icon {
+  cursor: pointer;
+  color: #555;
+  font-size: 16px;
+  min-width: 20px;
+}
+
+.clear-icon {
+  margin-right: 5px;
+}
+
+.search-trigger {
+  z-index: 2;
+}
+
+/* For medium-sized screens */
+@media (max-width: 992px) and (min-width: 769px) {
+  .search-container.desktop {
+    width: 200px;
+  }
+}
+
+/* For mobile screens */
+@media (max-width: 768px) {
+  .search-container.mobile.expanded {
+    width: 150px;
+
+    .page-title {
+      display: none; /* Hidden on mobile */
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .mobile-title {
+    display: none;
+  }
+  .user-title{
+    display: none;
+  }
+}
+
+/* Group the search bar and profile together */
+.navbar-right-items {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Adjust the space between search and profile */
+}
+
+/* Hide the title on mobile screens */
+@media (max-width: 768px) {
+  .mobile-title {
+    display: none;
+  }
+}
+  /* On mobile, you may want to adjust the gap or alignment */
+  .navbar-controls {
+    display: flex;
+    align-items: center;
+    gap: 16px; /* space between search and profile */
+  }
+  

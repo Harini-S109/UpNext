@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { FaFolder, FaFile, FaPlus, FaUpload, FaTrash } from 'react-icons/fa';
+import { FaFolder, FaFile, FaPlus, FaUpload, FaTrash, FaDownload } from 'react-icons/fa';
 import './FileExplorer.css';
 import '../../App.css';
 
@@ -98,6 +98,18 @@ const FileExplorer = () => {
         }
         setLoading(false);
     };
+
+    const handleDownload = (fileUrl, fileName) => {
+        const link = document.createElement('a');
+        link.href = fileUrl;
+        link.download = fileName || 'download'; // fallback name
+        link.target = '_blank';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      };
+      
+    
 
     const handleDeleteClick = (type, id, e) => {
         if (e) {
@@ -213,20 +225,35 @@ const FileExplorer = () => {
                     </div>
                 ))}
                 
+                
+
                 {files.map((file) => (
-                    <div key={file._id} className="item">
-                        <div className="item-content" onClick={() => openFile(file.filePath)}>
-                            <FaFile className="icon" />
-                            <span>{file.originalName}</span>
-                        </div>
-                        <button 
-                            className="delete-button" 
-                            onClick={(e) => handleDeleteClick('file', file._id, e)}
-                            title="Delete file"
-                        >
-                            <FaTrash />
-                        </button>
+                    <div key={file._id} className="file-item">
+                    <div className="file-info" onClick={() => openFile(file.filePath)}>
+                      <FaFile className="file-icon" />
+                      <span className="file-name">{file.originalName}</span>
                     </div>
+                    <div className="file-actions">
+                      <button
+                        className="action-button"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          handleDownload(file.filePath, file.originalName);
+                        }}
+                        title="Download"
+                      >
+                        <FaDownload />
+                      </button>
+                      <button
+                        className="action-button delete"
+                        onClick={(e) => handleDeleteClick('file', file._id, e)}
+                        title="Delete"
+                      >
+                        <FaTrash />
+                      </button>
+                    </div>
+                  </div>
+                  
                 ))}
             </div>
 
